@@ -1,0 +1,11 @@
+.caja-texto {
+    width: 100%;
+    max-width: 200px; /* Ajusta el ancho máximo según sea necesario */
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px; /* Bordes redondeados */
+    background-color: white; /* Fondo blanco */
+    font-size: 16px; /* Tamaño de fuente */
+    outline: none; 
+    margin-bottom: 20px;
+}

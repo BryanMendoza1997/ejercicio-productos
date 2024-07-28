@@ -1,0 +1,111 @@
+<div class="contenedor-padre">
+    <div class="contenedor">
+        <div class="encabezado">
+            <h1>Formulario de Registro</h1>
+            <hr>
+        </div>
+        <div class="cuerpo">
+            <form [formGroup]="formularioProductos" (ngSubmit)="onSubmit()" autocomplete="off">
+                <div class="seccion">
+                    <div>
+                        <label class="etiqueta">ID</label>
+                        <div class="encapsular">
+                            <input type="text" formControlName="id" class="form-control" placeholder="ID">
+                            <div class="espacio">
+                                <span *ngIf="isValidField('id')" class="form-text text-danger">
+                                    {{ getFieldError('id') }}
+                                </span>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div>
+                        <label class="col-sm-3 col-form-label">Nombre</label>
+                        <div class="encapsular">
+                            <input type="text" formControlName="name" class="form-control"
+                                placeholder="Nombre del producto">
+                            <div class="espacio">
+                                <span *ngIf="isValidField('name')" class="form-text text-danger">
+                                    {{ getFieldError('name') }}
+                                </span>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="seccion">
+                    <div>
+                        <label class="col-sm-3 col-form-label">Descripción</label>
+                        <div class="encapsular">
+                            <input type="text" formControlName="description" class="form-control"
+                                placeholder="Descripción">
+                            <div class="espacio">
+                                <span *ngIf="isValidField('description')" class="form-text text-danger">
+                                    {{ getFieldError('description') }}
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <label class="col-sm-3 col-form-label">Logo</label>
+                        <div class="encapsular">
+                            <input type="text" formControlName="logo" class="form-control" placeholder="Logo">
+                            <div class="espacio">
+                                <span *ngIf="isValidField('logo')" class="form-text text-danger">
+                                    {{ getFieldError('logo') }}
+                                </span>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="seccion">
+                    <div>
+                        <label class="col-sm-3 col-form-label">Fecha Liberación</label>
+                        <div class="encapsular">
+                            <input type="date" formControlName="date_release" class="form-control"
+                                placeholder="Fecha Liberación">
+                            <div class="espacio">
+                                <span *ngIf="isValidField('date_release')" class="form-text text-danger">
+                                    {{ getFieldError('date_release') }}
+                                </span>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div>
+                        <label class="col-sm-3 col-form-label">Fecha Revisión</label>
+                        <div class="encapsular">
+                            <input type="date" formControlName="date_revision" class="form-control"
+                                placeholder="Fecha Revisión">
+                            <div class="espacio">
+                                <span *ngIf="isValidField('date_revision')" class="form-text text-danger">
+                                    {{ getFieldError('date_revision') }}
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="contenedor-botones">
+                    <div class="boton">
+                        <button type="button" (click)="limpiarFormulario()" class="btn btn-reiniciar">
+                            Reiniciar
+                        </button>
+                    </div>
+                    <div>
+                        <button type="submit" class="btn btn-enviar" [disabled]="this.formularioProductos.invalid">
+                            Enviar
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<app-snackbar #snackbar></app-snackbar>
+
+<!-- <h5>liberacion</h5>
+<pre>{{ formularioProductos.controls['date_release'].errors | json }}</pre>
+
+<h5>revision</h5>
+<pre>{{ formularioProductos.controls['date_revision'].errors | json }}</pre> -->

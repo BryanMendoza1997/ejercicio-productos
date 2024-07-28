@@ -1,0 +1,8 @@
+<div class="listar-productos">
+    <div class="contenedor-encabezado">
+        <shared-caja-busqueda (onDebounce)="buscarProducto($event)"></shared-caja-busqueda>
+        <button mat-flat-button class="boton-agregar" (click)="redirigir()">Agregar</button>
+    </div>
+    <app-tabla-productos [productos]="listaProductosAuxiliar" (eliminarElemento)="eliminar($event)"></app-tabla-productos>
+</div>
+<app-snackbar #snackbar></app-snackbar>

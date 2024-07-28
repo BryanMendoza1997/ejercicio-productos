@@ -1,0 +1,66 @@
+<div #table>
+    <div class="contenedor-principal">
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th> Logo </th>
+                        <th> Nombre del producto </th>
+                        <th>
+                            <div class="titulo-tabla"><span>Descripción</span>
+                                <div class="contendor-icono"><mat-icon matListItemIcon>info</mat-icon></div>
+                            </div>
+                        </th>
+                        <th>
+                            <div class="titulo-tabla"><span>Fecha de liberación</span>
+                                <div class="contendor-icono"><mat-icon matListItemIcon>info</mat-icon></div>
+                            </div>
+                        </th>
+                        <th>
+                            <div class="titulo-tabla"><span>Fecha de reestructuración</span>
+                                <div class="contendor-icono"><mat-icon matListItemIcon>info</mat-icon></div>
+                            </div>
+                        </th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let producto of obtenerProductos; let i = index">
+                        <td> <img [src]="producto.logo" alt="producto" class="rounded-image"></td>
+                        <td> {{ producto.name }} </td>
+                        <td> {{ producto.description }}</td>
+                        <td> {{ producto.date_release | date:'dd/MM/yyyy' }} </td>
+                        <td> {{ producto.date_revision | date:'dd/MM/yyyy' }} </td>
+                        <td>
+                            <div>
+                                <mat-icon class="dropdown-btn" (click)="mostrarOcultarOpciones(i)"
+                                    matListItemIcon>more_vert</mat-icon>
+                                <div [ngClass]="i === dropdownIndex ? 'mostrar' : 'ocultar'" class="dropdown-content"
+                                    id="dropdownContent">
+                                    <a (click)="modificarProducto(producto)">Modificar</a>
+                                    <a (click)="eliminarProducto(producto)">Eliminar</a>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="contedor-resultados">
+            <div class="etiqueta-resultados">
+                <span>{{ ObtenerNumeroRegistros }} Resultados </span>
+            </div>
+            <div class="numero-elementos">
+                <select #itemsPerPageSelect id="itemsPerPage" class="selector" [value]="resgistrosPorPagina"
+                    (change)="onItemsPerPageChange($event)">
+                    <option *ngFor="let option of itemsPerPageOptions" [value]="option">{{ option }}</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <!--Modal-->
+    <shared-modal [message]="modalMensaje" (confirm)="onConfirm($event)" #modal>
+    </shared-modal>
+
+</div>

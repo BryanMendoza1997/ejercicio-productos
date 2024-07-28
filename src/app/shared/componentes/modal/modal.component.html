@@ -1,0 +1,12 @@
+<div class="modal" [ngClass]="{'show': isVisible}">
+    <div class="modal-content">
+        <div class="titulo">
+            <strong>{{ message }}</strong>
+        </div>
+        <hr>
+        <div class="botones">
+            <button class="cancel-button" (click)="closeModal()"><strong>Cancelar</strong></button>
+            <button class="confirm-button" (click)="onConfirm()"><strong>Confirmar</strong></button>
+        </div>
+    </div>
+</div>

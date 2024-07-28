@@ -1,0 +1,44 @@
+.snackbar {
+    visibility: hidden;
+    /* Ocultar por defecto */
+    min-width: 250px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 2px;
+    padding: 16px;
+    position: fixed;
+    z-index: 1;
+    left: 50%;
+    bottom: 30px;
+    transform: translateX(-50%);
+    font-size: 17px;
+}
+
+.snackbar.show {
+    visibility: visible;
+    /* Mostrar el snackbar */
+    animation: fadeInOut 3s;
+}
+
+@keyframes fadeInOut {
+    0% {
+        bottom: 0;
+        opacity: 0;
+    }
+
+    10% {
+        bottom: 30px;
+        opacity: 1;
+    }
+
+    90% {
+        bottom: 30px;
+        opacity: 1;
+    }
+
+    100% {
+        bottom: 0;
+        opacity: 0;
+    }
+}

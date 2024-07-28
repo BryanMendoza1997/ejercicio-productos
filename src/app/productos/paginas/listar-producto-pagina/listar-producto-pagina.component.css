@@ -1,0 +1,22 @@
+.listar-productos{
+    margin: 70px 50px 50px 50px;
+}
+
+.boton-agregar{
+    background-color: #f5df66; /* Color amarillo */
+    border: none; /* Sin borde por defecto */
+    padding: 0px 24px; /* Espaciado interno (alto y ancho) */
+    font-size: 13px; /* Tamaño de fuente */
+    color: rgb(26, 6, 201); /* Color del texto */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    font-weight: bold; /* Texto en negrita */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Transición para cambios de estilo */
+    
+}
+
+.contenedor-encabezado {
+    display: flex;
+    justify-content: space-between; /* Distribuye los botones a los extremos */
+    margin: 10px 0; /* Ajusta el margen según sea necesario */
+}
